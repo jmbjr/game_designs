@@ -65,7 +65,6 @@ Because Beast Brawler is a standard "JRPG", there are the standard JRPG subsyste
         * Thou hast been defeated! []
       * When the player presses the activation key, run "Reload Heroes After Death" routine
  
-  * "Player Leveled Up" routine
 * The typical battle flow is:
   * Determine what kind and how many enemies to fight
   * Draw the enemies into the Enemy Layout Panel
@@ -77,12 +76,14 @@ Because Beast Brawler is a standard "JRPG", there are the standard JRPG subsyste
     * Check if all enemies are defeated. If so, run "Won the Battle" logic
     * Check if the heroes are defeated. If so, run "Lost the Battle" logic 
     * Determine next entity to act. This will be the entity with the current highest initiative stat.
-    * if an enemy has initiative:
+    * if an enemy has highest initiative:
+      * reset their initiative to their starting initiative
       * highlight enemy
       * enemy fight!!!
       * handle stat changes
       * Update Battle Message Log
-    * if a player has initiative:
+    * if a player has highest initiative:
+      * reset their initiative to their starting initiative
       * highlight player
       * allow Player Battle Menu Option navigation
       * handle picked option
@@ -113,3 +114,4 @@ There should be a 'cancel' key that the user can use to 'cancel' an activation a
 All controls should be configurable with thought given to accessibility (reference a good guide for designing for accessibility)
 
 ## 3. Environment
+ 
